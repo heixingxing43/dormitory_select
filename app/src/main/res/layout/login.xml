@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#cc0066"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/xiaohui"
+            android:layout_width="45.0dp"
+            android:layout_height="45.0dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/xiaohui"/>
+
+        <TextView
+            android:id="@+id/dorm_title"
+            android:layout_toRightOf="@id/xiaohui"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="软微选宿舍系统"
+            android:textSize="30dp"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="20.0dp"
+            android:gravity="center_horizontal"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/login_ground"
+        android:layout_below="@id/title"
+        android:gravity="center_vertical"
+        android:background="@drawable/pexels_photo_416998">
+
+        <RelativeLayout
+            android:id="@+id/login_number"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="30dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="学号："
+                android:textSize="28sp"
+                android:textColor="@android:color/white"/>
+
+            <EditText
+                android:id="@+id/input_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="40"
+                android:hint="Please input the number"
+                android:layout_toRightOf="@id/number"
+                android:background="@android:color/white"
+                android:textColor="@android:color/black"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/login_password"
+            android:layout_below="@id/login_number"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="30dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="密码："
+                android:textSize="28sp"
+                android:textColor="@android:color/white"/>
+
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="40"
+                android:hint="Please input the number"
+                android:layout_toRightOf="@id/password"
+                android:background="@android:color/white"
+                android:textColor="@android:color/black"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="登录"
+            android:textSize="20dp"
+            android:layout_marginTop="38dp"
+            android:layout_below="@+id/login_password"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
