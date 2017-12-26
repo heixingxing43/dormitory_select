@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/studentInfo_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ff0000">
+
+        <TextView
+            android:id="@+id/illus_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="软微在线选宿舍系统"
+            android:textSize="30dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/studentInfo_title">
+
+        <RelativeLayout
+            android:id="@+id/forscroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            //个人信息
+            <RelativeLayout
+                android:id="@+id/personal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:id="@+id/stdinfo_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="个人信息:"
+                    android:textSize="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginStart="11dp" />
+
+                <TextView
+                    android:id="@+id/student_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:text="学号：      null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_below="@id/stdinfo_title"/>
+
+                <TextView
+                    android:id="@+id/student_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/student_id"
+                    android:textSize="25dp"
+                    android:text="姓名：      null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/student_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/student_name"
+                    android:textSize="25dp"
+                    android:text="性别：      null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/student_vcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/student_gender"
+                    android:textSize="25dp"
+                    android:text="验证码：  null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/student_room"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/student_vcode"
+                    android:textSize="25dp"
+                    android:text="房间号：  null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/student_building"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/student_room"
+                    android:textSize="25dp"
+                    android:text="楼号：      null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/student_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/student_building"
+                    android:textSize="25dp"
+                    android:text="校区：      null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/student_grade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/student_location"
+                    android:textSize="25dp"
+                    android:text="年级：      null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+            </RelativeLayout>
+
+            //剩余宿舍信息
+            <RelativeLayout
+                android:id="@+id/dorminfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/personal"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:id="@+id/dorminfo_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="剩余宿舍情况:"
+                    android:textSize="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="11dp" />
+
+                <TextView
+                    android:id="@+id/building5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dorminfo_title"
+                    android:textSize="25dp"
+                    android:text="5号楼：  null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/building13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/building5"
+                    android:textSize="25dp"
+                    android:text="13号楼：  null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/building14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/building13"
+                    android:textSize="25dp"
+                    android:text="14号楼：  null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/building8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/building14"
+                    android:textSize="25dp"
+                    android:text="8号楼：  null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/building9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/building8"
+                    android:textSize="25dp"
+                    android:text="9号楼：  null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+            </RelativeLayout>
+
+            //选宿舍
+            <RelativeLayout
+                android:id="@+id/selectdorm"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@id/dorminfo">
+
+                <Button
+                    android:id="@+id/selectdormBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="开始办理"
+                    android:textSize="25dp"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -7,7 +7,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="#cc0066"
+        android:background="#CDCDB4"
         android:gravity="center_vertical">
 
         <ImageView
@@ -24,7 +24,7 @@
             android:layout_height="45dp"
             android:text="软微选宿舍系统"
             android:textSize="30dp"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:layout_marginLeft="20.0dp"
             android:gravity="center_horizontal"/>
     </RelativeLayout>
@@ -54,9 +54,9 @@
             <EditText
                 android:id="@+id/input_number"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:maxLength="40"
-                android:hint="Please input the number"
+                android:hint=" 请输入学号"
                 android:layout_toRightOf="@id/number"
                 android:background="@android:color/white"
                 android:textColor="@android:color/black"/>
@@ -81,9 +81,9 @@
             <EditText
                 android:id="@+id/input_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:maxLength="40"
-                android:hint="Please input the number"
+                android:hint=" 请输入密码"
                 android:layout_toRightOf="@id/password"
                 android:background="@android:color/white"
                 android:textColor="@android:color/black"/>
@@ -92,7 +92,7 @@
         <Button
             android:id="@+id/submit"
             android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:gravity="center"
             android:text="登录"
             android:textSize="20dp"

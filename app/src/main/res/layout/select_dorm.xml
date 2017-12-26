@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ff0000"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/base_action_bar_back_normal"
+            android:gravity="center_vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"/>
+
+        <ImageView
+            android:id="@+id/exit"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/exit_png"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:text="选择宿舍办理"
+            android:textSize="30dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/white"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/select_renshu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/title">
+
+        <TextView
+            android:id="@+id/renshu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="住宿人数"
+            android:textSize="20dp"
+            />
+
+        <Spinner
+            android:id="@+id/renshukuang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/renshu"
+            android:entries="@array/spingarr" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/select_building"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/select_renshu"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/building"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="目标住宿楼"
+            android:textSize="20dp"/>
+
+        <Spinner
+            android:id="@+id/sushekuang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/building"
+            android:entries="@array/spingarr2" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/info_1"
+        android:layout_below="@+id/select_building"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/sep11"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#000000"/>
+
+        <RelativeLayout
+            android:id="@+id/info_1_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="同住人1学号"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:id="@+id/id_1"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#acacac"
+                android:background="@drawable/edit"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/sep12"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="#acacac"/>
+
+        <RelativeLayout
+            android:id="@+id/info_1_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sep12"
+            android:layout_marginTop="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="同住人1校验码"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"/>
+
+            <EditText
+                android:id="@+id/vcode_1"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#acacac"
+                android:background="@drawable/edit"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/sep13"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/info_2"
+        android:layout_below="@+id/info_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/sep21"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#000000"/>
+
+        <RelativeLayout
+            android:id="@+id/info_2_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="同住人2学号"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"/>
+
+            <EditText
+                android:id="@+id/id_2"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#000000"
+                android:background="@drawable/edit"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/sep22"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="#acacac"/>
+
+        <RelativeLayout
+            android:id="@+id/info_2_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sep22"
+            android:layout_marginTop="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="同住人2校验码"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"/>
+
+            <EditText
+                android:id="@+id/vcode_2"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#000000"
+                android:background="@drawable/edit"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/sep23"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/info_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:layout_below="@+id/info_2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/sep31"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#000000"/>
+
+        <RelativeLayout
+            android:id="@+id/info_3_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="同住人3学号"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"/>
+
+            <EditText
+                android:id="@+id/id_3"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#000000"
+                android:background="@drawable/edit"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/sep32"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="#acacac"/>
+
+        <RelativeLayout
+            android:id="@+id/info_3_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sep32"
+            android:layout_marginTop="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="同住人3校验码"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"/>
+
+            <EditText
+                android:id="@+id/vcode_3"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#000000"
+                android:background="@drawable/edit"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/sep33"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#000000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/info_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        android:layout_below="@+id/info_3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/sep41"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#000000"/>
+
+        <RelativeLayout
+            android:id="@+id/info_4_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="同住人4学号"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"/>
+
+            <EditText
+                android:id="@+id/id_4"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#000000"
+                android:background="@drawable/edit"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/sep42"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="#acacac"/>
+
+        <RelativeLayout
+            android:id="@+id/info_4_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sep31"
+            android:layout_marginTop="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="同住人4校验码"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"/>
+
+            <EditText
+                android:id="@+id/vcode_4"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:textColor="#000000"
+                android:background="@drawable/edit"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/sep43"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#000000"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/errorHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="学号不存在，请确认后重新填写"
+        android:textColor="#ab0815"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/info_4"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确认选择"
+        android:layout_below="@+id/errorHint"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
