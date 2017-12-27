@@ -23,6 +23,7 @@
 
         <activity android:name=".activity.StudentInfo"/>
         <activity android:name=".activity.Select"/>
+        <activity android:name=".activity.Map"/>
 
     </application>
 

@@ -7,11 +7,13 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.heixingxing.dormitory_select.R;
@@ -42,6 +44,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
     private static final int LOGIN_SUCCESS=1;
     private EditText mEditCode;
     private EditText mEditPsword;
+    private ImageView deleteid, deletepsw, pswvisible, pswinvisble;
 
     private Button mSubmitBtn;
     private String username, password;
@@ -71,14 +74,42 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v){
-        if(v.getId()==R.id.submit){
-            Log.d("login","submit");
-            queryLogin(username, password);
+        switch (v.getId()){
+            case R.id.submit:
+                Log.d("login","submit");
+                queryLogin(username, password);
+                break;
+            case R.id.delete_id:
+                mEditCode.setText("");
+                break;
+            case R.id.delete_password:
+                mEditPsword.setText("");
+                break;
+            case R.id.vislble_password:
+                pswinvisble.setVisibility(View.VISIBLE);
+                pswvisible.setVisibility(View.INVISIBLE);
+                mEditPsword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                break;
+            case R.id.invisible_password:
+                pswinvisble.setVisibility(View.INVISIBLE);
+                pswvisible.setVisibility(View.VISIBLE);
+                mEditPsword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                break;
+            default:
+                break;
         }
     }
 
     //初始化
     private void initView(){
+        deleteid = (ImageView)findViewById(R.id.delete_id);
+        deleteid.setOnClickListener(this);
+        deletepsw = (ImageView)findViewById(R.id.delete_password);
+        deletepsw.setOnClickListener(this);
+        pswvisible = (ImageView)findViewById(R.id.vislble_password);
+        pswvisible.setOnClickListener(this);
+        pswinvisble = (ImageView)findViewById(R.id.invisible_password);
+        pswinvisble.setOnClickListener(this);
         mSubmitBtn = (Button)findViewById(R.id.submit);
         mSubmitBtn.setOnClickListener(this);
         mEditCode = (EditText)findViewById(R.id.input_number);
@@ -207,8 +238,19 @@ public class MainActivity extends Activity implements View.OnClickListener{
             Intent i = new Intent(this, StudentInfo.class);
             i.putExtra("student_id", username);
             startActivityForResult(i,1);
-        }else{
+        } else if (errcode.equals("40001")) {
+            Log.d("login", "40001");
+            Toast.makeText(MainActivity.this, "学号不存在，请重新填写", Toast.LENGTH_SHORT).show();
+            mEditCode.setText(null);
+            mEditPsword.setText(null);
+        } else if (errcode.equals("40002")) {
+            Log.d("login", "40002");
             Toast.makeText(MainActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
+            mEditCode.setText(null);
+            mEditPsword.setText(null);
+        } else if (errcode.equals("40009")) {
+            Log.d("login", "40009");
+            Toast.makeText(MainActivity.this, "学号和密码均不能为空", Toast.LENGTH_SHORT).show();
             mEditCode.setText(null);
             mEditPsword.setText(null);
         }

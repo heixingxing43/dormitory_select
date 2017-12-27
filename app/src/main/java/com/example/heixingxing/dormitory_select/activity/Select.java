@@ -32,7 +32,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
+
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 public class Select extends Activity implements View.OnClickListener{
     private static final int DORM_SELECT_INFOMATION = 3;
@@ -41,7 +45,7 @@ public class Select extends Activity implements View.OnClickListener{
     private Spinner mSpiNum, mSpiBuilding;
     private LinearLayout mInfo1, mInfo2, mInfo3, mInfo4;
     private TextView mErrorHint;
-    private ImageView mExit, mBack;
+    private ImageView mBack;
     private Button mConfirmTv;
 
     private String id1, id2, id3, id4;
@@ -86,12 +90,6 @@ public class Select extends Activity implements View.OnClickListener{
                 startActivityForResult(intent,1);
                 finish();
                 break;
-            case R.id.exit:
-                sharedPreferences.edit().putBoolean("AUTO_LOGIN", false).commit();
-                Intent intent2 = new Intent(Select.this, MainActivity.class);
-                startActivity(intent2);
-                finish();
-                break;
             case R.id.confirm:
                 Log.d("dormselect","clickconfirm");
                 queryConfirmInfo(makeJsonData());
@@ -102,8 +100,6 @@ public class Select extends Activity implements View.OnClickListener{
     }
 
     private void initView(){
-        mExit = (ImageView)findViewById(R.id.exit);
-        mExit.setOnClickListener(this);
         mBack = (ImageView)findViewById(R.id.back);
         mBack.setOnClickListener(this);
 
@@ -279,8 +275,15 @@ public class Select extends Activity implements View.OnClickListener{
             public void run() {
                 HttpURLConnection conn = null;
                 int errorCode = -1;
+
+                // Create a trust manager that does not validate certificate chains
+                TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager(){
+                    public X509Certificate[] getAcceptedIssuers(){return null;}
+                    public void checkClientTrusted(X509Certificate[] certs, String authType){}
+                    public void checkServerTrusted(X509Certificate[] certs, String authType){}
+                }};
                 try {
-                    MyX509TrustManager.allowAllSSL();
+                    //MyX509TrustManager.allowAllSSL();
                     URL url = new URL(address);
                     conn = (HttpURLConnection) url.openConnection();
                     conn.setDoOutput(true);
@@ -335,25 +338,30 @@ public class Select extends Activity implements View.OnClickListener{
 
     protected void confirmBackHint(int errorCode) {
         if (errorCode == 0) {
-            Log.d("dormselect", "成功");
-            Toast.makeText(Select.this, "选择宿舍成功", Toast.LENGTH_LONG).show();
-            Intent jumpIntent = new Intent(Select.this, StudentInfo.class);
-            jumpIntent.putExtra("student_id", id1);
-            startActivity(jumpIntent);
-            finish();
+            if(Integer.parseInt(id1.substring(id1.length()-2, id1.length()-1)) %2 ==0){
+                Log.d("dormselect", "成功");
+                Toast.makeText(Select.this, "选择宿舍成功", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Select.this, StudentInfo.class);
+                intent.putExtra("student_id", id1);
+                startActivityForResult(intent,1);
+            }else{
+                Toast.makeText(Select.this, "选择宿舍失败", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Select.this, StudentInfo.class);
+                intent.putExtra("student_id", id1);
+                startActivityForResult(intent,1);
+            }
         } else if (errorCode == 40001) {
             Log.d("dormselect", "40001");
-            mErrorHint.setText("学号不存在，请确认后重新填写");
+            mErrorHint.setText("学号不存在，请重新填写");
             mErrorHint.setVisibility(View.VISIBLE);
         } else if (errorCode == 40002) {
             Log.d("dormselect", "40002");
-            mErrorHint.setText("验证码错误，请确认后重新填写");
+            mErrorHint.setText("验证码错误，请重新填写");
             mErrorHint.setVisibility(View.VISIBLE);
         } else if (errorCode == 40009) {
             Log.d("dormselect", "40009");
-            mErrorHint.setText("参数错误，请通知管理员");
+            mErrorHint.setText("参数错误");
             mErrorHint.setVisibility(View.VISIBLE);
-
         }
     }
 }

@@ -22,15 +22,6 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"/>
 
-        <ImageView
-            android:id="@+id/exit"
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/exit_png"
-            android:gravity="center_vertical"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -100,11 +91,7 @@
         android:orientation="vertical"
         android:background="#ffffff">
 
-        <ImageView
-            android:id="@+id/sep11"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="#000000"/>
+
 
         <RelativeLayout
             android:id="@+id/info_1_id"
@@ -116,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:text="同住人1学号"
-                android:textColor="#000000"
+                android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:layout_marginStart="15dp"
                 android:layout_alignParentTop="true"
@@ -129,17 +116,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:textColor="#acacac"
                 android:background="@drawable/edit"/>
         </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/sep12"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:background="#acacac"/>
 
         <RelativeLayout
             android:id="@+id/info_1_key"
@@ -166,15 +144,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:textColor="#acacac"
                 android:background="@drawable/edit"/>
         </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/sep13"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="#000000"/>
 
     </LinearLayout>
 
@@ -186,12 +157,6 @@
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:background="#ffffff">
-
-        <ImageView
-            android:id="@+id/sep21"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="#000000"/>
 
         <RelativeLayout
             android:id="@+id/info_2_id"
@@ -216,17 +181,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:textColor="#000000"
                 android:background="@drawable/edit"/>
         </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/sep22"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:background="#acacac"/>
 
         <RelativeLayout
             android:id="@+id/info_2_key"
@@ -253,15 +209,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:textColor="#000000"
                 android:background="@drawable/edit"/>
         </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/sep23"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="#000000"/>
 
     </LinearLayout>
 
@@ -275,12 +224,6 @@
         android:layout_below="@+id/info_2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
-
-        <ImageView
-            android:id="@+id/sep31"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="#000000"/>
 
         <RelativeLayout
             android:id="@+id/info_3_id"
@@ -305,17 +248,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:textColor="#000000"
                 android:background="@drawable/edit"/>
         </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/sep32"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:background="#acacac"/>
 
         <RelativeLayout
             android:id="@+id/info_3_key"
@@ -342,15 +276,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:textColor="#000000"
                 android:background="@drawable/edit"/>
         </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/sep33"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="#000000"/>
 
     </LinearLayout>
 
@@ -364,12 +291,6 @@
         android:layout_below="@+id/info_3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
-
-        <ImageView
-            android:id="@+id/sep41"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="#000000"/>
 
         <RelativeLayout
             android:id="@+id/info_4_id"
@@ -394,17 +315,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:textColor="#000000"
                 android:background="@drawable/edit"/>
         </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/sep42"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:background="#acacac"/>
 
         <RelativeLayout
             android:id="@+id/info_4_key"
@@ -431,15 +343,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:textColor="#000000"
                 android:background="@drawable/edit"/>
         </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/sep43"
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="#000000"/>
 
     </LinearLayout>
 
@@ -447,7 +352,7 @@
         android:id="@+id/errorHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="学号不存在，请确认后重新填写"
+        android:text="学号不存在，请重新填写"
         android:textColor="#ab0815"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/info_4"

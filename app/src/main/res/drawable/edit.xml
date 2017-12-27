@@ -10,7 +10,7 @@
                 />
             <stroke
                 android:width="0.5px"
-                android:color="#EEE8AA"/>
+                android:color="@android:color/white"/>
         </shape>
     </item>
 </layer-list>

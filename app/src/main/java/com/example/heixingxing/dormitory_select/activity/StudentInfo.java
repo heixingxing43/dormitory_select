@@ -6,9 +6,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,9 +38,10 @@ public class StudentInfo extends Activity implements View.OnClickListener{
     private static final int STUDENT_INFOMATION = 1;
     private static final int DORMITORY_INFOMATION = 2;
 
-    private String student_id, vCode, dormRes, gender;
+    private String student_id, vCode, dormRes, gender, location;
     private TextView mIDTv, mNameTv, mGenderTv, mVcodeTv, mRoomTv, mBuildTv, mLoctTv, mGradeTv;
     private TextView build5Tv, build13Tv, build14Tv, build8Tv, build9Tv;
+    private ImageView mMapIv, mExitIv;
 
     private Button mSelectBtn;
     private SharedPreferences sharedPreferences;
@@ -83,16 +86,34 @@ public class StudentInfo extends Activity implements View.OnClickListener{
             Log.d("login",vCode);
             Log.d("login",dormRes);
 
-            Intent i = new Intent(this, Select.class);
-            i.putExtra("student_id", student_id);
-            i.putExtra("vCode", vCode);
-            i.putExtra("dormRes", dormRes);
+            if(location.equals("大兴")){
+                Intent i = new Intent(this, Select.class);
+                i.putExtra("student_id", student_id);
+                i.putExtra("vCode", vCode);
+                i.putExtra("dormRes", dormRes);
+                startActivityForResult(i,1);
+            }else{
+                Toast.makeText(StudentInfo.this,"无需选择宿舍",Toast.LENGTH_SHORT).show();
+            }
+        }
+        if(v.getId() == R.id.mapicon){
+            Intent i = new Intent(this, Map.class);
+            i.putExtra("student_id",student_id);
+            startActivityForResult(i,1);
+        }
+        if(v.getId() == R.id.exit1){
+            sharedPreferences.edit().putBoolean("EXIT_LOGIN", false).commit();
+            Intent i = new Intent(this, MainActivity.class);
             startActivityForResult(i,1);
         }
     }
 
     //初始化控件
     private void initView(){
+        mMapIv = (ImageView)findViewById(R.id.mapicon);
+        mMapIv.setOnClickListener(this);
+        mExitIv = (ImageView)findViewById(R.id.exit1);
+        mExitIv.setOnClickListener(this);
         mIDTv = (TextView)findViewById(R.id.student_id);
         mNameTv = (TextView)findViewById(R.id.student_name);
         mGenderTv = (TextView)findViewById(R.id.student_gender);
@@ -212,6 +233,7 @@ public class StudentInfo extends Activity implements View.OnClickListener{
         student_id = student.getStd_id();
         vCode = student.getVcode();
         gender = student.getGender();
+        location = student.getLocation();
         mIDTv.setText("学号：      "+student.getStd_id());
         mNameTv.setText("姓名：      "+student.getName());
         mGenderTv.setText("性别：      "+student.getGender());

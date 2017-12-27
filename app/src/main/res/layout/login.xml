@@ -58,8 +58,17 @@
                 android:maxLength="40"
                 android:hint=" 请输入学号"
                 android:layout_toRightOf="@id/number"
-                android:background="@android:color/white"
+                android:background="@drawable/contact_search_box_edittext_keyword_background"
                 android:textColor="@android:color/black"/>
+            
+            <ImageView
+                android:id="@+id/delete_id"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/delete"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -85,8 +94,36 @@
                 android:maxLength="40"
                 android:hint=" 请输入密码"
                 android:layout_toRightOf="@id/password"
-                android:background="@android:color/white"
+                android:background="@drawable/contact_search_box_edittext_keyword_background"
                 android:textColor="@android:color/black"/>
+
+            <ImageView
+                android:id="@+id/delete_password"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/delete"/>
+
+            <ImageView
+                android:id="@+id/invisible_password"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_toLeftOf="@id/delete_password"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/psw_invisible"/>
+
+            <ImageView
+                android:id="@+id/vislble_password"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_toLeftOf="@id/delete_password"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/psw_visible"
+                android:visibility="invisible"/>
         </RelativeLayout>
 
         <Button

@@ -10,6 +10,15 @@
         android:layout_height="40dp"
         android:background="#ff0000">
 
+        <ImageView
+            android:id="@+id/mapicon"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/mapicon"
+            android:gravity="center_vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"/>
+
         <TextView
             android:id="@+id/illus_title"
             android:layout_width="wrap_content"
@@ -18,6 +27,15 @@
             android:textSize="30dp"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/white"/>
+
+        <ImageView
+            android:id="@+id/exit1"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/exit_png"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp" />
     </RelativeLayout>
 
     <ScrollView
@@ -93,30 +111,10 @@
                     android:layout_marginTop="10dp"/>
 
                 <TextView
-                    android:id="@+id/student_room"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/student_vcode"
-                    android:textSize="25dp"
-                    android:text="房间号：  null"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
-
-                <TextView
-                    android:id="@+id/student_building"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/student_room"
-                    android:textSize="25dp"
-                    android:text="楼号：      null"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
-
-                <TextView
                     android:id="@+id/student_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/student_building"
+                    android:layout_below="@id/student_vcode"
                     android:textSize="25dp"
                     android:text="校区：      null"
                     android:layout_marginLeft="25dp"
@@ -129,6 +127,26 @@
                     android:layout_below="@id/student_location"
                     android:textSize="25dp"
                     android:text="年级：      null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/student_room"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/student_grade"
+                    android:textSize="25dp"
+                    android:text="房间号：  null"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/student_building"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/student_room"
+                    android:textSize="25dp"
+                    android:text="楼号：      null"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="10dp"/>
             </RelativeLayout>
