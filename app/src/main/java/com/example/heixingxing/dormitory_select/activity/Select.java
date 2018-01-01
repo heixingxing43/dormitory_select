@@ -19,8 +19,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.heixingxing.dormitory_select.R;
-import com.example.heixingxing.dormitory_select.bean.Student;
-import com.example.heixingxing.dormitory_select.util.MyX509TrustManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -283,7 +281,6 @@ public class Select extends Activity implements View.OnClickListener{
                     public void checkServerTrusted(X509Certificate[] certs, String authType){}
                 }};
                 try {
-                    //MyX509TrustManager.allowAllSSL();
                     URL url = new URL(address);
                     conn = (HttpURLConnection) url.openConnection();
                     conn.setDoOutput(true);

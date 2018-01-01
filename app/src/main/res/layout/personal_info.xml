@@ -69,7 +69,8 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_marginLeft="11dp"
-                    android:layout_marginStart="11dp" />
+                    android:layout_marginStart="11dp"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/student_id"
@@ -78,7 +79,8 @@
                     android:textSize="25dp"
                     android:text="学号：      null"
                     android:layout_marginLeft="25dp"
-                    android:layout_below="@id/stdinfo_title"/>
+                    android:layout_below="@id/stdinfo_title"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/student_name"
@@ -88,7 +90,8 @@
                     android:textSize="25dp"
                     android:text="姓名：      null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/student_gender"
@@ -98,7 +101,8 @@
                     android:textSize="25dp"
                     android:text="性别：      null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/student_vcode"
@@ -108,7 +112,8 @@
                     android:textSize="25dp"
                     android:text="验证码：  null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/student_location"
@@ -118,7 +123,8 @@
                     android:textSize="25dp"
                     android:text="校区：      null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/student_grade"
@@ -128,7 +134,8 @@
                     android:textSize="25dp"
                     android:text="年级：      null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/student_room"
@@ -138,7 +145,8 @@
                     android:textSize="25dp"
                     android:text="房间号：  null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/student_building"
@@ -148,7 +156,8 @@
                     android:textSize="25dp"
                     android:text="楼号：      null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
             </RelativeLayout>
 
             //剩余宿舍信息
@@ -167,7 +176,8 @@
                     android:textSize="25dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="11dp" />
+                    android:layout_marginLeft="11dp"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/building5"
@@ -177,7 +187,8 @@
                     android:textSize="25dp"
                     android:text="5号楼：  null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/building13"
@@ -187,7 +198,8 @@
                     android:textSize="25dp"
                     android:text="13号楼：  null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/building14"
@@ -197,7 +209,8 @@
                     android:textSize="25dp"
                     android:text="14号楼：  null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/building8"
@@ -207,7 +220,8 @@
                     android:textSize="25dp"
                     android:text="8号楼：  null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
                 <TextView
                     android:id="@+id/building9"
@@ -217,7 +231,8 @@
                     android:textSize="25dp"
                     android:text="9号楼：  null"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"/>
 
             </RelativeLayout>
 
